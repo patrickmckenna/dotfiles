@@ -1,0 +1,24 @@
+[user]
+	email = patrickmckenna@github.com
+	name = Patrick McKenna
+[push]
+	default = simple
+[alias]
+	lg = log --oneline --graph --decorate
+	lga = log --oneline --graph --decorate --all
+	st = status -s
+	co = checkout
+[core]
+	autocrlf = input
+	editor = sublime -n -w
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[credential]
+[fetch]
+	prune = true
