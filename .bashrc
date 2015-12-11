@@ -18,6 +18,7 @@ export EDITOR="sublime"
 export GITHUB_TOKEN=$(security find-generic-password -s github_access_token -a patrickmckenna -w)
 export GITHUBTEACHER_TOKEN=$(security find-generic-password -s githubteacher_access_token -a githubteacher -w)
 export GITHUBSTUDENT_TOKEN=$(security find-generic-password -s githubstudent_access_token -a githubstudent -w)
+export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s homebrew_github_api_token -a patrickmckenna -w)
 
 # credentials for dummy "Acme Service" app to auth against GitHub API
 export MOCK_EXTERNAL_SERVICE_CLIENT_ID=$(security find-generic-password -s mock_external_service_client_id -a patrickmckenna -w)
