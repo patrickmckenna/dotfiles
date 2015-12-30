@@ -5,6 +5,9 @@ export PATH="$PATH:$HOME/projects/bash_utils"
 export GOPATH="$HOME/projects/go_lang"
 export PATH="$PATH:$GOPATH/bin"
 
+# load rbenv automatically
+eval "$(rbenv init -)"
+
 export EDITOR="sublime"
 
 # make GitHub personal access token available for scripting
