@@ -11,10 +11,10 @@ eval "$(rbenv init -)"
 export EDITOR="sublime"
 
 # make GitHub personal access token available for scripting
-export GITHUB_TOKEN=$(security find-generic-password -s github_access_token -a patrickmckenna -w)
-export GITHUBTEACHER_TOKEN=$(security find-generic-password -s githubteacher_access_token -a githubteacher -w)
-export GITHUBSTUDENT_TOKEN=$(security find-generic-password -s githubstudent_access_token -a githubstudent -w)
-export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s homebrew_github_api_token -a patrickmckenna -w)
+export GITHUB_TOKEN=$(security find-generic-password -s GITHUB_TOKEN -a patrickmckenna -w)
+export GITHUBTEACHER_TOKEN=$(security find-generic-password -s GITHUBTEACHER_TOKEN -a githubteacher -w)
+export GITHUBSTUDENT_TOKEN=$(security find-generic-password -s GITHUBSTUDENT_TOKEN -a githubstudent -w)
+export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrickmckenna -w)
 
 
 # bash completion for homebrew
