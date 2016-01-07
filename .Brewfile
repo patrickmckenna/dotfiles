@@ -2,7 +2,9 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/dupes'
 tap 'homebrew/science'
+tap 'homebrew/services'
 tap 'homebrew/versions'
+cask 'xquartz'
 brew 'xz'
 brew 'pcre', args: ['universal']
 brew 'gettext'
@@ -41,7 +43,7 @@ brew 'gts'
 brew 'gdk-pixbuf'
 brew 'libcroco'
 brew 'librsvg'
-brew 'graphviz', args: ['with-app', 'with-freetype', 'with-bindings', 'with-gts', 'with-librsvg', 'with-pango', 'with-x11']
+brew 'graphviz', args: ['with-app', 'with-bindings', 'with-freetype', 'with-gts', 'with-librsvg', 'with-pango', 'with-x11']
 brew 'doxygen', args: ['with-doxywizard', 'with-graphviz', 'with-libclang']
 brew 'fftw', args: ['with-fortran', 'with-openmp']
 brew 'gdbm', args: ['with-libgdbm-compat']
@@ -75,7 +77,7 @@ brew 'nodenv'
 brew 'pandoc'
 brew 'postgresql', args: ['with-dtrace', 'with-python']
 brew 'python3'
-brew 'qt', args: ['with-d-bus', 'with-docs', 'with-mysql', 'with-postgresql', 'with-qt3support']
+brew 'qt', args: ['with-d-bus', 'with-docs', 'with-mysql', 'with-postgresql']
 brew 'ruby-build'
 brew 'rbenv'
 brew 'redis'
@@ -87,3 +89,10 @@ brew 'tree'
 brew 'xerces-c'
 brew 'xrootd'
 brew 'caskroom/cask/brew-cask'
+brew 'homebrew/versions/gmp4'
+brew 'homebrew/versions/isl011'
+brew 'homebrew/versions/cloog018'
+brew 'homebrew/versions/mpfr2'
+brew 'homebrew/versions/libmpc08'
+brew 'homebrew/versions/gcc49'
+cask 'java'
