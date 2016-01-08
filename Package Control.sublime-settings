@@ -6,6 +6,9 @@
 	"installed_packages":
 	[
 		"Git",
-		"Schemr"
+		"MarkdownEditing",
+		"Package Control",
+		"Schemr",
+		"Theme - Spacegray"
 	]
 }

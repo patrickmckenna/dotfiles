@@ -1,0 +1,14 @@
+{
+	"caret_extra_width": 1,
+	"caret_style": "solid",
+	"draw_centered": false,
+	"extensions":
+	[
+		"mdown",
+		"txt",
+		"md"
+	],
+	"line_numbers": true,
+	"tab_size": 2,
+	"wrap_width": 120
+}
