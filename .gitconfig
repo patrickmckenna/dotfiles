@@ -11,6 +11,7 @@
 [core]
 	autocrlf = input
 	editor = sublime -n -w
+	excludesfile = /Users/patrick/.gitignore_global
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
