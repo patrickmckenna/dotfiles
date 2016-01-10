@@ -2,6 +2,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "solid",
 	"draw_centered": false,
+	"mde.list_indent_auto_switch_bullet": false,
 	"extensions":
 	[
 		"mdown",
