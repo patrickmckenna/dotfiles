@@ -49,13 +49,14 @@ brew 'oniguruma'
 brew 'jq'
 brew 'openssl'
 brew 'libevent'
+brew 'readline'
+brew 'sqlite', args: ['with-dbstat', 'with-docs', 'with-fts', 'with-functions', 'with-icu4c', 'with-json1']
+brew 'python'
+brew 'llvm', args: ['with-clang']
 brew 'mysql'
 brew 'node', args: ['with-debug', 'with-full-icu']
 brew 'node-build'
 brew 'nodenv'
-brew 'readline'
-brew 'sqlite', args: ['with-functions']
-brew 'python'
 brew 'postgresql', args: ['with-dtrace', 'with-python']
 brew 'python3'
 brew 'qt', args: ['with-d-bus', 'with-docs', 'with-mysql', 'with-postgresql']
@@ -65,5 +66,6 @@ brew 'redis'
 brew 'scons'
 brew 'sqlitebrowser'
 brew 'tmux'
+brew 'tree'
 brew 'caskroom/cask/brew-cask'
 cask 'java'
