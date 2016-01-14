@@ -3,6 +3,7 @@
 	name = Patrick McKenna
 [push]
 	default = simple
+	recurseSubmodules = check
 [alias]
 	lg = log --oneline --graph --decorate
 	lga = log --oneline --graph --decorate --all
