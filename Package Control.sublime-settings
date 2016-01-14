@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"C++11",
 		"Git",
 		"MarkdownEditing",
 		"Package Control",
