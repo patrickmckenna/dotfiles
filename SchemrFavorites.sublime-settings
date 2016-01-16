@@ -3,6 +3,7 @@
 	[
 		"Packages/Color Scheme - Default/Monokai Bright.tmTheme",
 		"Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
-		"Packages/Color Scheme - Default/Solarized (Light).tmTheme"
+		"Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+		"Packages/Theme - Spacegray/base16-ocean.dark.tmTheme"
 	]
 }
