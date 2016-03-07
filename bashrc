@@ -8,7 +8,7 @@ export PATH="$PATH:$GOPATH/bin"
 # load rbenv automatically
 eval "$(rbenv init -)"
 
-export EDITOR="sublime"
+export EDITOR="atom"
 
 # make GitHub personal access token available for scripting
 export GITHUB_TOKEN=$(security find-generic-password -s GITHUB_TOKEN -a patrickmckenna -w)
