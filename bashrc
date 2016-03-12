@@ -26,7 +26,7 @@ fi
 export CLICOLOR=1
 
 # show current git branch in prompt
-export PS1="\w\[\033$(tput setaf 33)\$(print-git-branch.sh)\[\033[00m\] > "
+export PS1="\$(tput bold)\$(tput setaf 6)\w\$(tput setaf 3)\$(print-git-branch.sh)\$(tput setaf 6) > \$(tput sgr0)"
 
 # general aliases
 alias ll="ls -oAh"
