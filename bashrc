@@ -16,7 +16,6 @@ export GITHUBTEACHER_TOKEN=$(security find-generic-password -s GITHUBTEACHER_TOK
 export GITHUBSTUDENT_TOKEN=$(security find-generic-password -s GITHUBSTUDENT_TOKEN -a githubstudent -w)
 export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrickmckenna -w)
 
-
 # bash completion for homebrew
 if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
   . $(brew --prefix)/etc/bash_completion
@@ -30,3 +29,8 @@ export PS1="\[\$(tput bold)\]\[\$(tput setaf 6)\]\w\[\$(tput setaf 3)\]\$(print-
 
 # general aliases
 alias ll="ls -oAh"
+
+# keep more history
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+shopt -s histappend
