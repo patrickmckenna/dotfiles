@@ -1,6 +1,9 @@
 # add my Bash scripts
 export PATH="$PATH:$HOME/projects/bash_utils"
 
+# add GitHub Training's scripts
+export PATH="$PATH:$HOME/github/training_utils"
+
 # Go requires this
 export GOPATH="$HOME/projects/go_lang"
 export PATH="$PATH:$GOPATH/bin"
