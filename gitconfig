@@ -11,7 +11,7 @@
 	co = checkout
 [core]
 	autocrlf = input
-	editor = atom --wait
+	editor = sublime -n -w
 	excludesfile = /Users/patrick/.gitignore_global
 [filter "hawser"]
 	clean = git hawser clean %f
