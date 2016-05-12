@@ -9,6 +9,7 @@
 	lga = log --oneline --graph --decorate --all
 	st = status -s
 	co = checkout
+	ds = diff --stat
 [core]
 	autocrlf = input
 	editor = sublime -n -w
