@@ -2,7 +2,6 @@
 	email = patrickmckenna@github.com
 	name = Patrick McKenna
 [push]
-	default = simple
 	recurseSubmodules = check
 [alias]
 	lg = log --oneline --graph --decorate
@@ -10,6 +9,8 @@
 	st = status -s
 	co = checkout
 	ds = diff --stat
+	wip = commit -am"WIP"
+	amend = commit -a --amend -C HEAD
 [core]
 	autocrlf = input
 	editor = sublime -n -w
@@ -22,7 +23,6 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[credential]
 [fetch]
 	prune = true
 [pull]
