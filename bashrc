@@ -16,7 +16,6 @@ export EDITOR="sublime"
 # make GitHub personal access token available for scripting
 export GITHUB_TOKEN=$(security find-generic-password -s GITHUB_TOKEN -a patrickmckenna -w)
 export GITHUBTEACHER_TOKEN=$(security find-generic-password -s GITHUBTEACHER_TOKEN -a githubteacher -w)
-export GITHUBSTUDENT_TOKEN=$(security find-generic-password -s GITHUBSTUDENT_TOKEN -a githubstudent -w)
 export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrickmckenna -w)
 
 # bash completion for homebrew
