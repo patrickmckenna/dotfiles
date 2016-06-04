@@ -1,6 +1,7 @@
 [user]
 	email = patrickmckenna@github.com
 	name = Patrick McKenna
+	signingkey = B4938DB030885F60
 [push]
 	recurseSubmodules = check
 [alias]
