@@ -31,3 +31,5 @@
 	ff = only
 [commit]
 	gpgSign = true
+[diff]
+	compactionHeuristic = true
