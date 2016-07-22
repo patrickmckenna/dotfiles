@@ -1,9 +1,6 @@
 # add my Bash scripts
 export PATH="$PATH:$HOME/projects/bash_utils"
 
-# add GitHub Training's scripts
-export PATH="$PATH:$HOME/github/training_utils"
-
 # Go requires this
 export GOPATH="$HOME/projects/go_lang"
 export PATH="$PATH:$GOPATH/bin"
@@ -15,7 +12,6 @@ export EDITOR="sublime"
 
 # make GitHub personal access token available for scripting
 export GITHUB_TOKEN=$(security find-generic-password -s GITHUB_TOKEN -a patrickmckenna -w)
-export GITHUBTEACHER_TOKEN=$(security find-generic-password -s GITHUBTEACHER_TOKEN -a githubteacher -w)
 export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrickmckenna -w)
 
 # bash completion for homebrew
@@ -39,3 +35,6 @@ shopt -s histappend
 
 # ROOT needs this
 . $(brew --prefix root6)/libexec/thisroot.sh
+
+# execute commands in this file when starting interactive mode
+export PYTHONSTARTUP="$HOME/projects/dotfiles/startup.py"
