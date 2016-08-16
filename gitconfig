@@ -33,3 +33,5 @@
 	gpgSign = true
 [diff]
 	compactionHeuristic = true
+[hub]
+	host = ghe.io
