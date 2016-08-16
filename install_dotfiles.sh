@@ -21,3 +21,7 @@ for DOTFILE in *; do
   ln -s "$DOTFILEPATH" "$TARGETFILE" 
 
 done
+
+# matplotlib will look here by default for a file called matplotlibrc
+# TODO: symlink to that file
+mkdir $HOME/.config/matplotlib
