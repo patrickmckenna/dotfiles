@@ -1,38 +1,42 @@
 tap 'caskroom/cask'
 tap 'github/bootstrap'
 tap 'homebrew/bundle'
+tap 'homebrew/completions'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
 tap 'homebrew/python'
 tap 'homebrew/science'
 tap 'homebrew/services'
 tap 'homebrew/versions'
-cask 'xquartz'
 brew 'xz'
-brew 'pcre', args: ['universal']
-brew 'gettext'
-brew 'git', args: ['with-gettext', 'with-pcre']
-brew 'go'
+brew 'pkg-config'
+brew 'readline'
+brew 'icu4c', args: ['c++11']
+brew 'sqlite', args: ['with-dbstat', 'with-docs', 'with-fts', 'with-functions', 'with-icu4c', 'with-json1']
+brew 'gdbm', args: ['with-libgdbm-compat']
+brew 'openssl'
+brew 'python3'
 brew 'asciinema'
 brew 'autoconf'
-brew 'automake'
 brew 'bash-completion'
 brew 'bats'
-brew 'icu4c', args: ['c++11']
 brew 'boost', args: ['c++11', 'with-icu4c']
 brew 'boost-build'
-brew 'pkg-config'
 brew 'libpng'
 brew 'freetype'
 brew 'fontconfig'
 brew 'pixman'
+brew 'gettext'
 brew 'libffi'
+brew 'pcre', args: ['universal']
 brew 'glib'
 brew 'cairo'
 brew 'cereal'
 brew 'cmake'
+brew 'cowsay'
 brew 'dbus'
 brew 'diff-so-fancy'
+brew 'git', args: ['with-gettext', 'with-pcre']
 brew 'gobject-introspection'
 brew 'harfbuzz'
 brew 'pango'
@@ -45,44 +49,37 @@ brew 'gdk-pixbuf'
 brew 'libcroco'
 brew 'librsvg'
 brew 'graphviz', args: ['with-app', 'with-bindings', 'with-freetype', 'with-gts', 'with-librsvg', 'with-pango', 'with-x11']
+brew 'mysql'
+brew 'python'
+brew 'postgresql', args: ['with-dtrace', 'with-python']
+brew 'qt5', args: ['with-dbus', 'with-docs', 'with-examples', 'with-mysql', 'with-postgresql']
+brew 'llvm'
 brew 'doxygen', args: ['with-doxywizard', 'with-graphviz', 'with-libclang']
 brew 'gmp'
 brew 'mpfr'
 brew 'libmpc'
 brew 'isl'
 brew 'gcc'
-brew 'gdbm', args: ['with-libgdbm-compat']
 brew 'little-cms2'
 brew 'ghostscript', args: ['with-djvu', 'with-x11']
 brew 'git-imerge'
+brew 'go'
 brew 'git-lfs'
 brew 'gsl'
 brew 'heroku'
 brew 'hub', args: ['HEAD']
 brew 'oniguruma'
 brew 'jq'
-brew 'openssl'
 brew 'libevent'
 brew 'libgpg-error'
-brew 'libgcrypt'
-brew 'readline'
-brew 'sqlite', args: ['with-dbstat', 'with-docs', 'with-fts', 'with-functions', 'with-icu4c', 'with-json1']
-brew 'python'
-brew 'llvm', args: ['with-clang']
-brew 'mysql'
-brew 'node-build'
-brew 'phantomjs'
-brew 'postgresql', args: ['with-dtrace', 'with-python']
-brew 'python3'
-brew 'qt', args: ['with-d-bus', 'with-docs', 'with-mysql', 'with-postgresql']
 brew 'ruby-build'
 brew 'rbenv'
 brew 'scons'
-brew 'sqlitebrowser'
 brew 'swig'
 brew 'tmux'
 brew 'tree'
 brew 'xrootd'
+brew 'homebrew/completions/brew-cask-completion'
 brew 'homebrew/science/openblas'
 brew 'homebrew/python/numpy', args: ['with-python3']
 brew 'homebrew/python/matplotlib', args: ['with-cairo', 'with-ghostscript', 'with-python3']
