@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"AutoPEP8",
 		"C++11",
 		"Git",
 		"Markdown Extended",
