@@ -1,4 +1,5 @@
 #!/bin/bash
+# symlink all dotfiles into home directory
 
 set -e
 
@@ -7,21 +8,25 @@ cd $DOTFILESDIR
 DOTFILESDIR=$(pwd -P)
 
 for DOTFILE in *; do
-  echo "$DOTFILE" | egrep -q '(\.sublime-settings|\.sh)' && continue
+  echo "$DOTFILE" | egrep -q '(\.sublime-settings|\.sh|\.py)' && continue
 
-  TARGETFILE="$HOME/.$DOTFILE"
-  [ "$DOTFILE" = "gitignore" ] && TARGETFILE="$TARGETFILE"_global
   DOTFILEPATH="$DOTFILESDIR/$DOTFILE"
-  
-  if [ -f "$TARGETFILE" ]
+  TARGETFILE="$HOME/.$DOTFILE"
+
+  # handle some special cases
+  if [ "$DOTFILE" = "gitignore" ]
   then
-    echo "==> file $TARGETFILE already exists, overwriting it"
-    rm "$TARGETFILE"
+    TARGETFILE="$TARGETFILE"_global
+  elif [ $DOTFILE = "matplotlibrc" ]
+  then
+    [ -d "$HOME/.config/matplotlib" ] || mkdir -p "$HOME/.config/matplotlib"
+    TARGETFILE="$HOME/.config/matplotlib/matplotlibrc"
+  fi
+
+  if [ -f "$TARGETFILE" ] || [ -L "$TARGETFILE" ]
+  then
+    echo "==> $TARGETFILE already exists, skipping..."
+    continue
   fi
   ln -s "$DOTFILEPATH" "$TARGETFILE" 
-
 done
-
-# matplotlib will look here by default for a file called matplotlibrc
-# TODO: symlink to that file
-mkdir $HOME/.config/matplotlib
