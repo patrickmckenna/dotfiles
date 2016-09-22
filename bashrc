@@ -36,8 +36,5 @@ export HISTSIZE=5000
 export HISTFILESIZE=10000
 shopt -s histappend
 
-# ROOT needs this
-. $(brew --prefix root6)/libexec/thisroot.sh
-
 # execute commands in this file when starting interactive mode
 export PYTHONSTARTUP="$HOME/projects/dotfiles/startup.py"
