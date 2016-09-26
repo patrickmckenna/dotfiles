@@ -1,16 +1,28 @@
 {
-	"auto_complete_commit_on_tab": true,
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
-	"font_size": 12,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"indent_to_bracket": true,
-	"line_padding_bottom": 1.1,
-	"line_padding_top": 1.1,
-	"match_brackets_angle": true,
-	"translate_tabs_to_spaces": true,
-	"wrap_width": 120
+    "auto_complete_commit_on_tab": true,
+    "color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+    "font_size": 12,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "indent_to_bracket": true,
+    "line_padding_bottom": 1.1,
+    "line_padding_top": 1.1,
+    "match_brackets_angle": true,
+    "translate_tabs_to_spaces": true,
+    "wrap_width": 120,
+    "folder_exclude_patterns":
+    [
+        ".git",
+        "__pycache__",
+        "*.pages"
+    ],
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "*.pages",
+        "*.png"
+    ]
 }
