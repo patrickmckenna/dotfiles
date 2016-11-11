@@ -8,13 +8,14 @@ tap 'homebrew/python'
 tap 'homebrew/science'
 tap 'homebrew/services'
 tap 'homebrew/versions'
-brew 'xz'
+brew 'apache-spark'
+brew 'gdbm', args: ['with-libgdbm-compat']
+brew 'openssl'
 brew 'pkg-config'
 brew 'readline'
 brew 'icu4c', args: ['c++11']
 brew 'sqlite', args: ['with-dbstat', 'with-docs', 'with-fts', 'with-functions', 'with-icu4c', 'with-json1']
-brew 'gdbm', args: ['with-libgdbm-compat']
-brew 'openssl'
+brew 'xz'
 brew 'python3'
 brew 'asciinema'
 brew 'autoconf'
@@ -25,40 +26,38 @@ brew 'boost-build'
 brew 'libpng'
 brew 'freetype'
 brew 'fontconfig'
-brew 'pixman'
 brew 'gettext'
 brew 'libffi'
 brew 'pcre', args: ['universal']
 brew 'glib'
+brew 'pixman'
 brew 'cairo'
 brew 'cereal'
 brew 'cmake'
 brew 'cowsay'
 brew 'dbus'
 brew 'diff-so-fancy'
-brew 'git', args: ['with-gettext', 'with-pcre']
-brew 'gobject-introspection'
-brew 'harfbuzz'
-brew 'pango'
 brew 'jpeg'
-brew 'libtiff'
 brew 'jasper'
+brew 'libtiff'
 brew 'netpbm'
 brew 'gts'
+brew 'git', args: ['with-gettext', 'with-pcre']
+brew 'gobject-introspection'
+brew 'shared-mime-info'
 brew 'gdk-pixbuf'
 brew 'libcroco'
+brew 'harfbuzz'
+brew 'pango'
 brew 'librsvg'
 brew 'graphviz', args: ['with-app', 'with-bindings', 'with-freetype', 'with-gts', 'with-librsvg', 'with-pango', 'with-x11']
-brew 'mysql'
 brew 'python'
-brew 'postgresql', args: ['with-dtrace', 'with-python']
-brew 'qt5', args: ['with-dbus', 'with-docs', 'with-examples', 'with-mysql', 'with-postgresql']
 brew 'llvm'
-brew 'doxygen', args: ['with-doxywizard', 'with-graphviz', 'with-libclang']
+brew 'doxygen', args: ['with-graphviz']
 brew 'gmp'
+brew 'isl'
 brew 'mpfr'
 brew 'libmpc'
-brew 'isl'
 brew 'gcc'
 brew 'little-cms2'
 brew 'ghostscript', args: ['with-djvu', 'with-x11']
@@ -66,23 +65,43 @@ brew 'git-imerge'
 brew 'go'
 brew 'git-lfs'
 brew 'gsl'
+brew 'hadoop'
 brew 'heroku'
+brew 'hive'
 brew 'hub', args: ['HEAD']
 brew 'oniguruma'
 brew 'jq'
+brew 'launch_socket_server', restart_service: true
+brew 'launchdns', restart_service: true
 brew 'libevent'
 brew 'libgpg-error'
+brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engine', 'with-debug', 'with-embedded', 'with-local-infile', 'with-test'], restart_service: true
+brew 'openssl@1.1'
+brew 'nginx', restart_service: true
+brew 'postgresql', args: ['with-dtrace', 'with-python3'], restart_service: true
 brew 'ruby-build'
 brew 'rbenv'
 brew 'scons'
 brew 'swig'
+brew 'utf8proc'
 brew 'tmux'
 brew 'tree'
 brew 'xrootd'
 brew 'homebrew/completions/brew-cask-completion'
 brew 'homebrew/science/openblas'
-brew 'homebrew/python/numpy', args: ['with-python3']
-brew 'homebrew/python/matplotlib', args: ['with-cairo', 'with-ghostscript', 'with-python3']
-brew 'homebrew/python/scipy', args: ['with-python3']
 brew 'homebrew/science/root6', args: ['with-xrootd']
+cask 'atom'
+cask 'banktivity'
+cask 'bartender'
+cask 'cloak'
+cask 'firefox'
+cask 'flux'
+cask 'google-chrome'
+cask 'istat-menus'
+cask 'knockknock'
+cask 'marked'
+cask 'parallels-desktop'
+cask 'slack'
+cask 'torbrowser'
 cask 'viscosity'
+cask 'zoomus'
