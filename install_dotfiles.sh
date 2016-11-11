@@ -1,5 +1,6 @@
 #!/bin/bash
-# symlink all dotfiles into home directory
+
+# symlinks all dotfiles into home directory
 
 set -e
 
@@ -8,6 +9,7 @@ cd $DOTFILESDIR
 DOTFILESDIR=$(pwd -P)
 
 for DOTFILE in *; do
+  # should put these into subdirs
   echo "$DOTFILE" | egrep -q '(\.sublime-settings|\.sh|\.py)' && continue
 
   DOTFILEPATH="$DOTFILESDIR/$DOTFILE"
@@ -30,3 +32,5 @@ for DOTFILE in *; do
   fi
   ln -s "$DOTFILEPATH" "$TARGETFILE" 
 done
+
+./set_macos_prefs.sh
