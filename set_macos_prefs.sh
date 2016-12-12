@@ -37,9 +37,6 @@ launchctl unload -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
 echo " - disable Printer Sharing"
 cupsctl --no-share-printers
 
-echo " - disable Wake on Network Access"
-sudo systemsetup -setwakeonnetworkaccess off
-
 echo " - disable File Sharing"
 launchctl unload -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist && \
 launchctl unload -w /System/Library/LaunchDaemons/com.apple.smbd.plist
@@ -83,6 +80,9 @@ sudo pmset displaysleep 15
 echo " - enable hibernation mode (no memory power on sleep)"
 sudo pmset -a hibernatemode 25
 
+echo " - disable Wake on Network Access"
+sudo systemsetup -setwakeonnetworkaccess off
+
 
 
 # --- app-specific preferences ---
@@ -109,13 +109,13 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo " - show ~/Library"
 chflags nohidden ~/Library
 
-echo " - show status bar"
+echo " - show status bar in Finder"
 defaults write com.apple.finder ShowStatusBar -bool true
 
-echo " - set current folder as default search scope"
+echo " - set current folder as default search scope in Finder"
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-echo " - quit Printer after job completes"
+echo " - quit Printer app after job completes"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 echo " - expand Print panel by default"
