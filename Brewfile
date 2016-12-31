@@ -110,6 +110,7 @@ cask 'marked'
 cask 'parallels-desktop'
 cask 'slack'
 cask 'torbrowser'
+cask 'tresorit'
 cask 'viscosity'
 cask 'whatsapp'
 cask 'zoomus'
@@ -117,6 +118,7 @@ mas 'Kindle', id: 405399194
 mas 'The Unarchiver', id: 425424353
 mas 'Xcode', id: 497799835
 mas 'ScreenFlow', id: 917790450
+mas 'Keynote', id: 409183694
 mas 'Skitch', id: 425955336
 mas '1Password', id: 443987910
 mas 'Mousepose', id: 405904955
@@ -125,3 +127,4 @@ mas 'Marked 2', id: 890031187
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
 mas 'Electron APIs', id: 1119345146
+mas 'Numbers', id: 409203825
