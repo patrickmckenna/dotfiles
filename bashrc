@@ -11,6 +11,11 @@ export PATH="$PATH:$GOPATH/bin"
 # load rbenv automatically
 eval "$(rbenv init -)"
 
+# enable pyenv shims, autocompletion
+eval "$(pyenv init -)"
+# do likewise for pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
+
 export EDITOR="sublime"
 
 # make GitHub personal access token available for scripting

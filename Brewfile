@@ -14,7 +14,7 @@ brew 'openssl'
 brew 'readline'
 brew 'sqlite', args: ['with-dbstat', 'with-docs', 'with-fts', 'with-functions', 'with-icu4c', 'with-json1']
 brew 'xz'
-brew 'python3'
+brew 'python3', args: ['with-sphinx-doc']
 brew 'asciinema'
 brew 'autoconf'
 brew 'bash-completion'
@@ -84,10 +84,13 @@ brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engi
 brew 'openssl@1.1'
 brew 'nginx', restart_service: true
 brew 'postgresql', args: ['with-dtrace', 'with-python3']
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 brew 'ruby-build'
 brew 'rbenv'
 brew 'ruby'
 brew 'scons'
+brew 'sphinx-doc'
 brew 'swig'
 brew 'tmux'
 brew 'tree'
@@ -96,6 +99,7 @@ brew 'xrootd'
 brew 'homebrew/completions/brew-cask-completion'
 brew 'homebrew/science/openblas'
 brew 'homebrew/science/root6', args: ['with-xrootd']
+cask 'adobe-digital-editions'
 cask 'atom'
 cask 'banktivity'
 cask 'bartender'
@@ -109,21 +113,22 @@ cask 'knockknock'
 cask 'marked'
 cask 'parallels-desktop'
 cask 'slack'
+cask 'tidal'
 cask 'torbrowser'
 cask 'tresorit'
 cask 'viscosity'
 cask 'whatsapp'
 cask 'zoomus'
-mas 'Kindle', id: 405399194
-mas 'The Unarchiver', id: 425424353
 mas 'Xcode', id: 497799835
 mas 'ScreenFlow', id: 917790450
+mas 'The Unarchiver', id: 425424353
+mas 'Kindle', id: 405399194
 mas 'Keynote', id: 409183694
+mas 'Mousepose', id: 405904955
 mas 'Skitch', id: 425955336
 mas '1Password', id: 443987910
-mas 'Mousepose', id: 405904955
-mas 'GIFBrewery', id: 435989461
 mas 'Marked 2', id: 890031187
+mas 'GIFBrewery', id: 435989461
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
 mas 'Electron APIs', id: 1119345146
