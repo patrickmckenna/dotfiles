@@ -21,6 +21,7 @@ brew 'bash-completion'
 brew 'bats'
 brew 'boost', args: ['c++11', 'with-icu4c']
 brew 'boost-build'
+brew 'brew-cask-completion'
 brew 'libpng'
 brew 'freetype'
 brew 'fontconfig'
@@ -51,7 +52,7 @@ brew 'gobject-introspection'
 brew 'shared-mime-info'
 brew 'gdk-pixbuf'
 brew 'little-cms2'
-brew 'ghostscript', args: ['with-djvu', 'with-x11']
+brew 'ghostscript', args: ['with-x11']
 brew 'git-imerge'
 brew 'git-lfs'
 brew 'go'
@@ -70,7 +71,7 @@ brew 'hub', args: ['HEAD']
 brew 'oniguruma'
 brew 'jq'
 brew 'launch_socket_server', restart_service: true
-brew 'launchdns'
+brew 'launchdns', restart_service: true
 brew 'libcroco'
 brew 'libevent'
 brew 'libgpg-error'
@@ -80,10 +81,10 @@ brew 'libyaml'
 brew 'python'
 brew 'llvm'
 brew 'mas'
-brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engine', 'with-debug', 'with-embedded', 'with-local-infile', 'with-test']
+brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engine', 'with-debug', 'with-embedded', 'with-local-infile', 'with-test'], restart_service: true
 brew 'openssl@1.1'
 brew 'nginx', restart_service: true
-brew 'postgresql', args: ['with-dtrace', 'with-python3']
+brew 'postgresql', args: ['with-dtrace', 'with-python3'], restart_service: true
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'ruby-build'
@@ -96,7 +97,6 @@ brew 'tmux'
 brew 'tree'
 brew 'utf8proc'
 brew 'xrootd'
-brew 'homebrew/completions/brew-cask-completion'
 brew 'homebrew/science/openblas'
 brew 'homebrew/science/root6', args: ['with-xrootd']
 cask 'adobe-digital-editions'
