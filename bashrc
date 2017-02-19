@@ -16,7 +16,7 @@ eval "$(pyenv init -)"
 # do likewise for pyenv-virtualenv
 eval "$(pyenv virtualenv-init -)"
 
-export EDITOR="sublime"
+export EDITOR="subl"
 
 export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrick -w)
 

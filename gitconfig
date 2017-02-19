@@ -15,7 +15,7 @@
 	dsf = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [core]
 	autocrlf = input
-	editor = sublime -n -w
+	editor = subl -n -w
 	excludesfile = /Users/patrick/.gitignore_global
 [filter "hawser"]
 	clean = git hawser clean %f
