@@ -18,9 +18,7 @@ eval "$(pyenv virtualenv-init -)"
 
 export EDITOR="sublime"
 
-# make GitHub personal access token available for scripting
-export GITHUB_TOKEN=$(security find-generic-password -s GITHUB_TOKEN -a patrickmckenna -w)
-export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrickmckenna -w)
+export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrick -w)
 
 # add identities to ssh-agent
 ssh-add -K "$HOME/.ssh/id_github_dotcom" >&/dev/null
