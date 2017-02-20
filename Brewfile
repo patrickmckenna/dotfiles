@@ -8,6 +8,7 @@ tap 'homebrew/python'
 tap 'homebrew/science'
 tap 'homebrew/services'
 tap 'homebrew/versions'
+cask 'java'
 cask 'xquartz'
 brew 'apache-spark'
 brew 'gdbm', args: ['with-libgdbm-compat']
@@ -48,13 +49,17 @@ brew 'go'
 brew 'pkg-config'
 brew 'gobject-introspection'
 brew 'gsl'
+brew 'hadoop'
 brew 'icu4c', args: ['c++11']
 brew 'harfbuzz'
 brew 'heroku'
+brew 'hive'
 brew 'hub', args: ['HEAD']
 brew 'jpeg'
 brew 'oniguruma'
 brew 'jq'
+brew 'launch_socket_server', restart_service: true
+brew 'launchdns', restart_service: true
 brew 'libevent'
 brew 'libtiff'
 brew 'libtool'
@@ -64,8 +69,8 @@ brew 'llvm'
 brew 'mas'
 brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engine', 'with-debug', 'with-embedded', 'with-local-infile', 'with-test']
 brew 'openssl@1.1'
-brew 'nginx'
-brew 'postgresql', args: ['with-dtrace', 'with-python3']
+brew 'nginx', restart_service: true
+brew 'postgresql', args: ['with-dtrace', 'with-python3'], restart_service: true
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'ruby-build'
@@ -87,6 +92,7 @@ cask 'drobo-dashboard'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
+cask 'google-hangouts'
 cask 'gpgtools'
 cask 'istat-menus'
 cask 'keepingyouawake'
