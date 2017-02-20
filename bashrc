@@ -20,6 +20,9 @@ export EDITOR="subl"
 
 export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrick -w)
 
+# Hub uses this
+export GITHUB_TOKEN=$(security find-generic-password -s HUB_TOKEN -a patrick -w)
+
 # add identities to ssh-agent
 ssh-add -K "$HOME/.ssh/github_dotcom_id_rsa" >&/dev/null
 ssh-add -K "$HOME/.ssh/github_bastion_id_rsa" >&/dev/null
