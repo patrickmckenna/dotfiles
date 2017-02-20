@@ -21,8 +21,8 @@ export EDITOR="subl"
 export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a patrick -w)
 
 # add identities to ssh-agent
-ssh-add -K "$HOME/.ssh/id_github_dotcom" >&/dev/null
-ssh-add -K "$HOME/.ssh/id_github_bastion" >&/dev/null
+ssh-add -K "$HOME/.ssh/github_dotcom_id_rsa" >&/dev/null
+ssh-add -K "$HOME/.ssh/github_bastion_id_rsa" >&/dev/null
 
 # bash completion for homebrew
 if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
