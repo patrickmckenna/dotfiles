@@ -58,6 +58,7 @@ brew 'hub', args: ['HEAD']
 brew 'jpeg'
 brew 'oniguruma'
 brew 'jq'
+brew 'kubernetes-cli'
 brew 'launch_socket_server', restart_service: true
 brew 'launchdns', restart_service: true
 brew 'libevent'
@@ -67,7 +68,7 @@ brew 'libyaml'
 brew 'python'
 brew 'llvm'
 brew 'mas'
-brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engine', 'with-debug', 'with-embedded', 'with-local-infile', 'with-test']
+brew 'mysql', args: ['with-archive-storage-engine', 'with-blackhole-storage-engine', 'with-debug', 'with-embedded', 'with-local-infile', 'with-test'], restart_service: true
 brew 'openssl@1.1'
 brew 'nginx', restart_service: true
 brew 'postgresql', args: ['with-dtrace', 'with-python3'], restart_service: true
@@ -88,14 +89,17 @@ cask 'banktivity'
 cask 'bartender'
 cask 'box-sync'
 cask 'cloak'
+cask 'docker'
 cask 'drobo-dashboard'
 cask 'firefox'
 cask 'flux'
+cask 'gitter'
 cask 'google-chrome'
 cask 'google-hangouts'
 cask 'gpgtools'
 cask 'istat-menus'
 cask 'keepingyouawake'
+cask 'keybase'
 cask 'knockknock'
 cask 'little-snitch'
 cask 'marked'
@@ -108,19 +112,19 @@ cask 'tresorit'
 cask 'viscosity'
 cask 'whatsapp'
 cask 'zoomus'
-mas 'Kindle', id: 405399194
-mas 'Xcode', id: 497799835
-mas 'Keynote', id: 409183694
+mas '1Password', id: 443987910
+mas 'Electron APIs', id: 1119345146
+mas 'GarageBand', id: 682658836
+mas 'GIFBrewery', id: 435989461
 mas 'iMovie', id: 408981434
+mas 'Keynote', id: 409183694
+mas 'Kindle', id: 405399194
+mas 'Marked 2', id: 890031187
+mas 'Mousepose', id: 405904955
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
 mas 'ScreenFlow', id: 917790450
 mas 'Skitch', id: 425955336
-mas '1Password', id: 443987910
-mas 'Mousepose', id: 405904955
-mas 'The Unarchiver', id: 425424353
-mas 'Marked 2', id: 890031187
-mas 'GIFBrewery', id: 435989461
-mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
-mas 'GarageBand', id: 682658836
-mas 'Electron APIs', id: 1119345146
-mas 'Numbers', id: 409203825
+mas 'The Unarchiver', id: 425424353
+mas 'Xcode', id: 497799835
