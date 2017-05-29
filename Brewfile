@@ -66,6 +66,7 @@ brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
 brew "libyaml"
 brew "llvm"
+brew "mackup"
 brew "mas"
 brew "mysql", args: ["with-archive-storage-engine", "with-blackhole-storage-engine", "with-debug", "with-embedded", "with-local-infile", "with-test"], restart_service: true
 brew "openssl@1.1"
