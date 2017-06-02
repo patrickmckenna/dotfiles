@@ -1,3 +1,19 @@
 {
-	"bootstrapped": true
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Apache Hive",
+		"Dockerfile Syntax Highlighting",
+		"Git",
+		"INI",
+		"Markdown Extended",
+		"Marked App Menu",
+		"Package Control",
+		"Protobuf Syntax Hightlighting",
+		"Schemr",
+		"Theme - Spacegray"
+	]
 }
