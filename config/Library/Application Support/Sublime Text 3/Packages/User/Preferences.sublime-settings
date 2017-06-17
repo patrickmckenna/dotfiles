@@ -25,5 +25,6 @@
 	"line_padding_top": 1,
 	"match_brackets_angle": true,
 	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
 	"wrap_width": 120
 }
