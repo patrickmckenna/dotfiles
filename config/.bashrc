@@ -32,12 +32,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # enable pyenv shims, autocompletion
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-# do likewise for pyenv-virtualenv
-if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-# execute commands in this file when starting interactive mode
-export PYTHONSTARTUP="$HOME/.config/python/startup.py"
-# make pyspark import-able
-if which pyspark > /dev/null; then export PYTHONPATH="$(brew --prefix apache-spark)/libexec/python:$PYTHONPATH"; fi
 
 
 export EDITOR="subl"
