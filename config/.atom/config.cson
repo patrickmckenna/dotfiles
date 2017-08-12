@@ -1,8 +1,47 @@
 "*":
+  Hydrogen:
+    startDir: "dirOfFile"
   core:
+    customFileTypes:
+      "source.yaml": [
+        "lkml"
+        "lookml"
+      ]
+    disabledPackages: [
+      "wrap-guide"
+      "Hydrogen"
+      "kite"
+    ]
     excludeVcsIgnoredPaths: false
     telemetryConsent: "no"
+  editor:
+    softWrap: true
   "exception-reporting":
     userId: "c93ce999-fa4a-49b6-867b-e63829f48fad"
+  "fuzzy-finder":
+    ignoredNames: [
+      ".git"
+    ]
+  kite:
+    hideDocumentationWhenSignatureIsAvailable: false
+    showKiteTourOnStatup: false
   welcome:
     showOnStartup: false
+".git-commit.text":
+  editor:
+    softWrapAtPreferredLineLength: true
+".git-config.source":
+  editor:
+    softWrapAtPreferredLineLength: true
+".git-rebase.text":
+  editor:
+    softWrapAtPreferredLineLength: false
+".python.regexp.source":
+  editor:
+    preferredLineLength: 100
+".python.source":
+  editor:
+    autoIndentOnPaste: true
+    preferredLineLength: 100
+    softWrapAtPreferredLineLength: true
+    tabLength: 4
