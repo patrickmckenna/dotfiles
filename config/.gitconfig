@@ -1,7 +1,10 @@
 [user]
 	name = Patrick McKenna
-	signingkey = B4938DB030885F60
 	useconfigonly = true
+[includeIf "gitdir:~/github/"]
+	path = .gitconfig_work
+[includeIf "gitdir:~/projects/"]
+	path = .gitconfig_play
 [push]
 	recurseSubmodules = check
 [alias]
