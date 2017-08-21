@@ -6,9 +6,11 @@
 	"installed_packages":
 	[
 		"Apache Hive",
+		"AutoPEP8",
 		"Dockerfile Syntax Highlighting",
 		"Git",
 		"Git Config",
+		"Github Tools",
 		"INI",
 		"Markdown Extended",
 		"Marked App Menu",
