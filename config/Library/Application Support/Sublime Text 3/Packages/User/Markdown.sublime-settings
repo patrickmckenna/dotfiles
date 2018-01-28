@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.tmTheme",
+	"extensions":
+	[
+		"md"
+	],
+    "tab_size": 2,
+    "trim_trailing_white_space_on_save": true,
+    "wrap_width": 120,
+    "line_numbers": true,
+    "mde.list_indent_auto_switch_bullet": false
+}
