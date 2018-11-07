@@ -1,3 +1,6 @@
+# ignore the Python virtualenv
+.venv
+
 # mackup currently has no support for pattern matching in config files (see:
 # https://github.com/lra/mackup/issues/602), so manually ignore certain files that shouldn't
 # be versioned
