@@ -12,10 +12,13 @@
 		"Git Config",
 		"Github Tools",
 		"INI",
+		"Jinja2",
 		"MarkdownEditing",
 		"Marked App Menu",
 		"Package Control",
 		"Protobuf Syntax Hightlighting",
-		"Theme - Spacegray"
+		"Puppet",
+		"Theme - Spacegray",
+		"TOML"
 	]
 }
