@@ -1,6 +1,5 @@
-# mackup automatically copies these, but there's no need to version them
-config/Library/Application Support/Sublime Text 3/Packages/User/Package Control.cache/
-config/Library/Application Support/Sublime Text 3/Packages/User/Package Control.last-run
-config/Library/Application Support/Sublime Text 3/Packages/User/Package Control.merged-ca-bundle
-config/Library/Application Support/Sublime Text 3/Packages/User/Package Control.user-ca-bundle
-config/Library/Application Support/Sublime Text 3/Packages/User/oscrypto-ca-bundle.crt
+# mackup copies many ST3 files that shouldn't be versioned (see: https://packagecontrol.io/docs/syncing)
+# b/c mackup currently has no support for pattern matching in config files (see:
+# https://github.com/lra/mackup/issues/602), we manually ignore them
+*/Library/Application Support/Sublime Text 3/Packages/User/*
+!*/Library/Application Support/Sublime Text 3/Packages/User/*.sublime-settings
