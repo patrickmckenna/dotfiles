@@ -1,0 +1,39 @@
+#!/bin/bash
+#/ Usage: script/update-global-packages
+#/
+#/ Update All The Things, i.e.
+#/   - MacOS system packages
+#/   - App Store apps
+#/   - Homebrew packages (including Cask-installed apps)
+#/   - global Python packages
+#/
+
+# if help requested, print the comments at the top of the file
+if [ "$1" = "--help" -o "$1" = "-h" -o "$1" = "help" ]; then
+  grep "^#/" < "$0" | cut -c4-
+  exit 0
+fi
+
+
+cd "$(dirname "$0")/.."
+
+
+echo "==> Installing MacOS system updates..."
+softwareupdate --install --all --restart
+
+
+echo "==> Updating MacOS App Store apps..."
+mas upgrade
+
+
+echo "==> Updating Homebrew packages..."
+brew update && brew upgrade && brew cleanup && brew prune
+
+
+echo "==> Updating Homebrew Cask-installed packages (and writing updated Brewfile)..."
+brew cu --all --yes --cleanup
+brew bundle dump --force --file="$GLOBAL_BREWFILE"
+
+
+echo "==> Updating global Python packages..."
+pip install --upgrade --requirement "$GLOBAL_PYTHON_PACKAGES"

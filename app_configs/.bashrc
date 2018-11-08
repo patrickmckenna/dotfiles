@@ -9,12 +9,8 @@ alias ll="ls -oAh"
 
 export EDITOR=subl
 
-# my scripts
-PERSONAL_UTILS="$HOME/projects/bash_utils"
-if [ -d $PERSONAL_UTILS ]; then
-    export PERSONAL_UTILS
-    export PATH="$PATH:$PERSONAL_UTILS"
-fi
+# misc. stuff
+export PATH="$PATH:$HOME/projects/bash_utils"
 
 # Homebrew stuff
 export PATH="$PATH:/usr/local/sbin"
@@ -22,6 +18,7 @@ export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GI
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+export GLOBAL_BREWFILE="$HOME/.Brewfile"
 
 # Hub uses this
 export GITHUB_TOKEN=$(security find-generic-password -s HUB_TOKEN -a $(whoami) -w)
@@ -30,6 +27,7 @@ export GITHUB_TOKEN=$(security find-generic-password -s HUB_TOKEN -a $(whoami) -
 export GOPATH="$HOME/projects/go_lang"
 export PATH="$PATH:$GOPATH/bin"
 
+# Python stuff
 # enable pyenv shims and tab completion
 if which pyenv >/dev/null; then
   eval "$(pyenv init -)"
@@ -40,6 +38,8 @@ if pipenv >/dev/null; then
     export PIPENV_VENV_IN_PROJECT=1
     eval "$(pipenv --completion)"
 fi
+
+export GLOBAL_PYTHON_PACKAGES="$HOME/.config/requirements.txt"
 
 # load rbenv automatically
 if which rbenv >/dev/null; then
