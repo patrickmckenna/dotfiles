@@ -1,0 +1,37 @@
+#!/bin/bash
+#/ Usage: script/setup
+#/
+#/ Set up dotfiles for the first time after cloning.
+#/
+
+set -e
+
+# if help requested, print the comments at the top of the file
+if [ "$1" = "--help" -o "$1" = "-h" -o "$1" = "help" ]; then
+  grep "^#/" < "$0" | cut -c4-
+  exit 0
+fi
+
+
+cd "$(dirname "$0")/.."
+
+
+APP_CONFIGS_DIR="app_configs"
+if [ -f "$APP_CONFIGS_DIR" ]; then
+    export APP_CONFIGS_DIR
+else
+    echo "Can't find directory containing config files"
+    exit 1
+fi
+
+
+script/bootstrap
+
+
+if [ -f "$APP_CONFIGS_DIR/.mackup.cfg" ]; then
+    echo "==> Symlinking dotfiles..."
+    pipenv run mackup --force --config "$APP_CONFIGS_DIR/.mackup.cfg" restore
+else
+    echo "Can't find mackup config file"
+    exit 1
+fi

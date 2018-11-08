@@ -1,0 +1,62 @@
+#!/bin/bash
+#/ Usage: script/bootstrap
+#/
+#/ Resolve all dependencies needed to set up dotfiles.
+#/
+
+set -e
+
+# if help requested, print the comments at the top of the file
+if [ "$1" = "--help" -o "$1" = "-h" -o "$1" = "help" ]; then
+  grep "^#/" < "$0" | cut -c4-
+  exit 0
+fi
+
+
+cd "$(dirname "$0")/.."
+
+
+# run strap first to, among other things, installs all Brewfile packages
+# but first, make sure the Brewfile is where strap expects it
+if [ -f "$APP_CONFIGS_DIR/.Brewfile" ]; then
+    echo "==> Copying global Brewfile (so strap can install contents)..."
+    cp -f "$APP_CONFIGS_DIR/.Brewfile" "$HOME/.Brewfile"
+else
+    echo "Can't find global Brewfile"
+    exit 1
+fi
+
+echo "==> Doing MikeMcQuaid/strap things..."
+git clone https://github.com/MikeMcQuaid/strap /tmp
+bash /tmp/strap/bin/strap.sh
+rm -rf /tmp/strap
+
+
+# set up gloabl Python env
+if [ -f "$APP_CONFIGS_DIR/.pyenv/version" ]; then
+    GLOBAL_PYTHON_VESRION=$(cat "$APP_CONFIGS_DIR/.pyenv/version")
+    echo "==> Installing global Python ($GLOBAL_PYTHON_VESRION)..."
+    # TODO: install iff not already installed
+    pyenv install "$GLOBAL_PYTHON_VESRION"
+    pyenv rehash
+    echo "==> Setting global Python to $GLOBAL_PYTHON_VESRION..."
+    pyenv global "$GLOBAL_PYTHON_VESRION"
+else
+    echo "Can't determine default global Python version"
+    exit 1
+fi
+
+if [ -f "$APP_CONFIGS_DIR/.config/requirements.txt" ]; then
+    echo "==> Installing global Python packages..."
+    pip install --upgrade --requirements "$APP_CONFIGS_DIR/.config/requirements.txt"
+else
+    echo "Can't find global Python requirements"
+    exit 1
+fi
+
+
+echo "==> Installing this repo's Python dependencies..."
+pipenv install
+
+
+echo "==> Boostrapping done!"
