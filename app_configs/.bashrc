@@ -1,50 +1,69 @@
 # enable colorized terminal output
 export CLICOLOR=1
 
+
 # show current git branch in prompt
-export PS1="\[\$(tput bold)\]\[\$(tput setaf 6)\]\w\[\$(tput setaf 3)\]\$(print-git-branch.sh)\[\$(tput setaf 6)\] > \[\$(tput sgr0)\]"
+export PS1="\[\$(tput bold)\]\[\$(tput setaf 6)\]\w\[\$(tput setaf 3)\]\$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\$(tput setaf 6)\] > \[\$(tput sgr0)\]"
+
 
 # general aliases
 alias ll="ls -oAh"
 
-export EDITOR=subl
 
-# misc. stuff
-export PATH="$PATH:$HOME/projects/bash_utils"
+if which subl >/dev/null; then
+    export EDITOR=subl
+fi
+
+
+if [ -d "$HOME/bin" ]; then
+    export PATH="$PATH:$HOME/bin"
+fi
+
 
 # Homebrew stuff
 export PATH="$PATH:/usr/local/sbin"
-export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a $(whoami) -w)
+HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s HOMEBREW_GITHUB_API_TOKEN -a $(whoami) -w 2>/dev/null)
+if [ "$HOMEBREW_GITHUB_API_TOKEN" ]; then
+    export HOMEBREW_GITHUB_API_TOKEN
+fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
-export GLOBAL_BREWFILE="$HOME/.Brewfile"
+if [ -f "$HOME/.Brewfile" ]; then
+    export GLOBAL_BREWFILE="$HOME/.Brewfile"
+fi
 
-# Hub uses this
-export GITHUB_TOKEN=$(security find-generic-password -s HUB_TOKEN -a $(whoami) -w)
 
-# Go stuff
-export GOPATH="$HOME/projects/go_lang"
-export PATH="$PATH:$GOPATH/bin"
+# Hub stuff (hub.github.com)
+GITHUB_TOKEN=$(security find-generic-password -s GITHUB_TOKEN -a $(whoami) -w 2>/dev/null)
+if [ "$GITHUB_TOKEN" ]; then
+    export GITHUB_TOKEN
+fi
+
 
 # Python stuff
-# enable pyenv shims and tab completion
 if which pyenv >/dev/null; then
-  eval "$(pyenv init -)"
+    # enable pyenv shims and tab completion
+    eval "$(pyenv init -)"
 fi
-
-# enable tab completion for pipenv
 if pipenv >/dev/null; then
-    export PIPENV_VENV_IN_PROJECT=1
+    # enable tab completion for pipenv
     eval "$(pipenv --completion)"
+    export PIPENV_VENV_IN_PROJECT=1
+fi
+if [ -f "$HOME/.config/requirements.txt" ]; then
+    export GLOBAL_PYTHON_PACKAGES="$HOME/.config/requirements.txt"
 fi
 
-export GLOBAL_PYTHON_PACKAGES="$HOME/.config/requirements.txt"
 
-# load rbenv automatically
+# Ruby stuff
 if which rbenv >/dev/null; then
+    # load rbenv automatically
     eval "$(rbenv init -)"
 fi
 
+
 # add identities to ssh-agent
-ssh-add -K "$HOME/.ssh/github_dotcom_id_rsa" >& /dev/null
+if [ -f "$HOME/.ssh/id_rsa" ]; then
+    ssh-add -K "$HOME/.ssh/id_rsa" >& /dev/null
+fi
