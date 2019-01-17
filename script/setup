@@ -1,7 +1,9 @@
 #!/bin/bash
 #/ Usage: script/setup
 #/
-#/ Set up dotfiles for the first time after cloning.
+#/ Do basic new machine setup:
+#/   - Run MikeMcQuaid/strap (does most of the heavy lifting)
+#/   - Set up globabl Python environment
 #/
 
 set -e
@@ -12,15 +14,60 @@ if [ "$1" = "--help" -o "$1" = "-h" -o "$1" = "help" ]; then
   exit 0
 fi
 
-
 cd "$(dirname "$0")/.."
 
+# there's some order of operations ugliness, because this repo uses mackup to
+# symlink most dotfiles
+# however, the files below need to be referenced before mackup gets installed,
+# so we check for their existence manually (and also copy a few as needed)
+BREWFILE="app_configs/.Brewfile"
+PYENV_GLOBAL="app_configs/.pyenv/version"
+GLOBAL_PYTHON_REQUIREMENTS="app_configs/.config/requirements.txt"
+MACKUP_CONFIG="app_configs/.mackup.cfg"
 
-APP_CONFIGS_DIR="app_configs"
-if [ -f "$APP_CONFIGS_DIR" ]; then
-    export APP_CONFIGS_DIR
-else
-    echo "Can't find directory containing config files"
+for f in "$BREWFILE" "$PYENV_GLOBAL" "$GLOBAL_PYTHON_REQUIREMENTS" "$MACKUP_CONFIG"; do
+    if [ ! -f "$f" ]; then
+        echo "$f doesn't exist!"
+        exit 1
+    fi
+done
+
+echo "==> Copying global Brewfile, mackup config"
+# MikeMcQuaid/strap expects this to exist locally (TODO: look into having separate Brewfile repo)
+cp -f "$BREWFILE" "$HOME/.Brewfile"
+# mackup expects this to exist already (mackup restore won't accept path to config file)
+cp -f "$MACKUP_CONFIG" "$HOME/.mackup.cfg"
+
+
+echo "==> Doing MikeMcQuaid/strap things"
+rm -rf strap
+git clone https://github.com/MikeMcQuaid/strap
+bash strap/bin/strap.sh
+rm -rf strap
+
+
+echo "==> Setting up global Python environment"
+# make sure pyenv installed and properly initialized (see https://git.io/fpEua)
+if ! which pyenv >/dev/null; then
+    echo "pyenv not installed"
+    exit 1
+fi
+if [ ! $(echo "$PATH" | grep "$(pyenv root)/shims") ]; then
+    echo "==> Initializing pyenv"
+    eval "$(pyenv init -)"
+    exec "$SHELL"
+fi
+
+echo "==> Global Python version will be:" $(cat "$PYENV_GLOBAL")
+pyenv install --skip-existing $(cat "$PYENV_GLOBAL")
+pyenv rehash
+pyenv global $(cat "$PYENV_GLOBAL")
+
+echo "==> Installing/updating global Python packages"
+pip install --upgrade --requirement "$GLOBAL_PYTHON_REQUIREMENTS" >/dev/null
+
+if ! pyenv which pipenv >/dev/null 2>&1; then
+    echo "pipenv not available!"
     exit 1
 fi
 
@@ -28,10 +75,8 @@ fi
 script/bootstrap
 
 
-if [ -f "$APP_CONFIGS_DIR/.mackup.cfg" ]; then
-    echo "==> Symlinking dotfiles..."
-    pipenv run mackup --force --config "$APP_CONFIGS_DIR/.mackup.cfg" restore
-else
-    echo "Can't find mackup config file"
-    exit 1
-fi
+echo "==> Running mackup"
+pipenv run mackup --force restore
+
+
+echo "==> Setup done"
