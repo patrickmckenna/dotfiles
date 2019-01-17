@@ -13,7 +13,7 @@
 		"__pycache__",
 		"*.pages"
 	],
-	"font_face": "SF Mono",
+	"font_face": "SF Mono Regular",
 	"font_size": 14,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
