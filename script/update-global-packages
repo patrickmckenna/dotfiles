@@ -27,7 +27,7 @@ mas upgrade
 
 
 echo "==> Updating Homebrew packages..."
-brew update && brew upgrade && brew cleanup && brew prune
+brew update && brew upgrade && brew cleanup
 
 
 echo "==> Updating Homebrew Cask-installed packages (and writing updated Brewfile)..."
