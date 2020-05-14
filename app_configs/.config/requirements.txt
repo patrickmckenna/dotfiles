@@ -1,4 +1,0 @@
-# globally available python packages
-pip
-pipenv
-setuptools
