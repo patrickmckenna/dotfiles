@@ -1,13 +1,1 @@
-# ignore the Python virtualenv
 .venv
-
-# mackup currently has no support for pattern matching in config files (see:
-# https://github.com/lra/mackup/issues/602), so manually ignore certain files that shouldn't
-# be versioned
-
-# ST3 files to ignore (see: https://packagecontrol.io/docs/syncing)
-*/Library/Application Support/Sublime Text 3/Packages/User/*
-!*/Library/Application Support/Sublime Text 3/Packages/User/*.sublime-settings
-
-# same for Dash.app
-*/Library/Application Support/Dash/License/license.dash-license
