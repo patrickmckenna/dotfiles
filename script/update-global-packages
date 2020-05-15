@@ -2,8 +2,6 @@
 #/ Usage: script/update-global-packages
 #/
 #/ Update All The Things, i.e.
-#/   - MacOS system packages
-#/   - App Store apps
 #/   - Homebrew packages (including Cask-installed apps)
 #/   - global Python packages
 #/
@@ -17,14 +15,7 @@ fi
 
 cd "$(dirname "$0")/.."
 
-
-echo "==> Installing MacOS system updates..."
-softwareupdate --install --all --restart
-
-
-echo "==> Updating MacOS App Store apps..."
-mas upgrade
-
+source .env
 
 echo "==> Updating Homebrew packages..."
 brew update && brew upgrade && brew cleanup
@@ -32,8 +23,9 @@ brew update && brew upgrade && brew cleanup
 
 echo "==> Updating Homebrew Cask-installed packages (and writing updated Brewfile)..."
 brew cu --all --yes --cleanup
-brew bundle dump --force --file="$GLOBAL_BREWFILE"
-
+# TODO: read location of global brewfile from mackup config
+# brew bundle dump --force --file="$GLOBAL_BREWFILE"
 
 echo "==> Updating global Python packages..."
-pip install --upgrade --requirement "$GLOBAL_PYTHON_PACKAGES"
+# TODO: read location of global python requirements from mackup config
+# pip install --upgrade --requirement "$GLOBAL_PYTHON_REQUIREMENTS"

@@ -1,8 +1,8 @@
 #!/bin/bash
 #/ Usage: script/bootstrap
 #/
-#/ Install the Python package(s) needed for this repo. Assumes pyenv and pipenv
-#/ are available.
+#/ This:
+#/   - ...
 #/
 
 set -e
@@ -15,16 +15,18 @@ fi
 
 cd "$(dirname "$0")/.."
 
-if ! which pyenv >/dev/null; then
-    echo "pyenv not installed; have you run script/setup?"
-    exit 1
-fi
-if ! pyenv which pipenv >/dev/null 2>&1; then
-    echo "pipenv not available; have you run script/setup?"
-    exit 1
-fi
+source .env
+
+# TODO: basic new machine setup
+
+# echo "==> Installing global Python packages"
+# TODO: read location of global python requirements from mackup config
+# pip install --upgrade --requirement "$GLOBAL_PYTHON_REQUIREMENTS"
 
 echo "==> Installing this repo's Python dependencies"
 pipenv install
+
+# workarounds for current limitations in mackup
+# TODO...
 
 echo "==> Boostrapping done"
